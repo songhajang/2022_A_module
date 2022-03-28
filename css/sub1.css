@@ -15,5 +15,35 @@ footer{
 /* content */
 .sub-content{
     box-sizing: border-box;
-    padding: 100px 420px;
+    padding: 100px 320px;
+}
+.sub-content .box{
+    background-color:  rgba(218, 218, 218, 0.2);
+    padding: 20px 50px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sub-content .text{
+    width: 400px;
+    height: 350px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #666;
+
+    box-sizing: border-box;
+    padding: 70PX;
+    text-align: center;
+    
+}
+
+.spclBty{
+
+
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 50%;
 }

@@ -14,24 +14,23 @@ footer{
     position: relative;
 }
 /* 후기작성 */
-.write{
+#WriteBtn{
     position: fixed;
     bottom: 50px;
-    right: 200px;
+    right: 230px;
 
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    /* width: 60px;
+    height: 60px; */
+    border-radius: 10px;
     background-color: white;    
 
     font-weight: 800;
-    font-size: 30px;
-    color: #d1d1d1;
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    color: white;
+    background-color: #a4a9af;
 
     box-sizing: border-box;
-    padding: 5px 20px;
+    padding: 5px 10px;
 }
 /* content */
 .review-content{
