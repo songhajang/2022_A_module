@@ -78,7 +78,7 @@ footer{
 .text h5{
     font-size: 17px;
 }
-.text .star{
+.text .stars{
     color: #fee820;
 }
 
@@ -90,7 +90,7 @@ footer{
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 99;
 
-    display: none;
+    /* display: none; */
 }
 #ModalBg > div{
     width: 800px;
@@ -118,4 +118,26 @@ footer{
     border-bottom: 1px solid gray;
 
     /* border: 0; */
+}
+/* star */
+.star {
+    position: relative;
+    font-size: 20px;
+    color: #ddd;
+}
+.star input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.star span{
+    width: 0;
+    position: absolute;
+    left: 0;
+    color: #fee820;
+    overflow: hidden;
+    pointer-events: none;
 }
