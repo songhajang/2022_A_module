@@ -78,7 +78,7 @@ footer{
 .text h5{
     font-size: 17px;
 }
-.text .star{
+.text .stars{
     color: #fee820;
 }
 
@@ -86,9 +86,16 @@ footer{
 #modal{
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
     display: none;
     position: fixed;
     z-index: 91;
+=======
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+
+    /* display: none; */
+>>>>>>> 4e8460f11094339b58f94845ee754cbfdd24864f
 }
 #modalItem{
     position: relative;
