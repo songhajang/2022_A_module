@@ -45,12 +45,6 @@ aside > .menu > a{
     float: right;
     margin-top: 10px;
     cursor: pointer;
-    transition: all 0.2s;
-}
-#logoutBtn:hover{
-    color: red;
-    border-color: red;
-    transition: all 0.2s;
 }
 /* content */
 .content{
