@@ -1,0 +1,54 @@
+aside > .menu > a:nth-child(1){
+    background-color: #eee;
+    border-radius: 10px;
+    color: blue;
+    font-weight: bold;
+}
+/* content */
+.loginBox{
+    width: calc(100% - 500px);
+    height: 100%;
+    text-align: center;
+
+    background-color: white;
+    border-radius: 30px;
+
+    padding: 50px 0;
+    margin: 215px auto;
+
+    display: none;
+    
+}
+.loginBox > h1{
+    margin-bottom: 50px;
+}
+.loginBox > div > h3{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.loginBox > div > input{
+    width: 500px;
+    height: 60px;
+    font-size: 18px;
+    background: 0;
+    border: none;
+    border-bottom: 1px solid black;
+    
+    margin-bottom: 30px;
+}
+.loginBox > #login{
+    width: 200px;
+    height: 50px;
+
+    background-color: blue;
+    border: none;
+    border-radius: 20px;
+
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+    margin-top: 30px;
+}
