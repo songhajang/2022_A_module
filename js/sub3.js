@@ -7,6 +7,10 @@ writeBtn.addEventListener("click", () => modal.style.display = "block" )       /
 modalBackGround.addEventListener("click", () => modal.style.display = "none" ) // modal off
 // modal on off
 
+// star
+const drawStar = (target) => {
+    document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
+  }
 // function addReview() {
 //     const link = ""
 //     const data = {
