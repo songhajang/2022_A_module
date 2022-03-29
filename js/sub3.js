@@ -7,15 +7,15 @@ writeBtn.addEventListener("click", () => modal.style.display = "block" )       /
 modalBackGround.addEventListener("click", () => modal.style.display = "none" ) // modal off
 // modal on off
 
-function addReview() {
-    const link = ""
-    const data = {
+// function addReview() {
+//     const link = ""
+//     const data = {
 
-    }
+//     }
     
-    $.ajax({
-        url: link,
-        method: "POST",
-        data:
-    })
-}
+//     $.ajax({
+//         url: link,
+//         method: "POST",
+//         data:
+//     })
+// }
