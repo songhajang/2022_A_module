@@ -25,8 +25,10 @@ header{
 }
 /* nav */
 .nav{
+    width: 150px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 .nav > li{
     padding: 0 20px;
@@ -34,24 +36,67 @@ header{
     position: relative;
 }
 /* share */
-.share-nav{
+.sub-nav{
     position: absolute;
     padding-top: 7px;
     z-index: 99;    
 }
-.share-nav ul{
+.sub-nav ul{
     height: 0;
     overflow: hidden;
     transition: all ease-out 0.5s;
 }
-.share-nav img{
+.sub-nav img{
     max-width: 35px;
     padding-top: 8px;
     border-radius: 50%;
     vertical-align: middle;
 }
+/* menu */
+input[id="menu-icon"]{
+    display: none;
+}
+#colse{
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    z-index: 9;
+
+    cursor: pointer;
+    position: relative;
+    display: none;
+}
+.sub-nav #menu{
+    width: 100px;
+    transform: translateX(-40px);
+    background-color: white;
+    border-radius: 20px;
+
+    box-sizing: border-box;
+    text-align: center;
+}
+.sub-nav #menu li a{
+    display: block;
+    color: black;
+    white-space: nowrap;
+    font-size: 15px;
+
+    margin: 10px 0;
+    border-bottom: 1px solid rgba(189, 189, 189, 0.5);
+}
+input[type="checkbox"]:checked ~ label #colse{
+    display: block;
+}
+input[type="checkbox"]:checked ~ label  ul{
+        height: 150px;
+        transition: all 0.5s;
+        padding: 10px;
+}
+input[type="checkbox"]:checked  ~ label #open{
+    display: none;
+}
 /* hover - share */
-.nav #share:hover .share-nav ul{
+.nav #share:hover .sub-nav ul{
     height: 250px;
     transition: all ease-out 0.5s;
 }
@@ -64,7 +109,7 @@ header{
     width: 100%;
     height: 400px;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9;
+    z-index: 1;
 
     text-align: center;
 }
