@@ -8,6 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>이벤트</title>
         <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/prefixfree.min.js"></script>
     </head>
 
     <body>
@@ -43,6 +45,30 @@
                 </li>
             </ul>
         </header>
+
+        <div class="message-modal d-none">
+            <div class="alert alert-primary">
+              이벤트에 참여해 주셔서 감사합니다!
+            </div>
+          </div>
+        
+          <div id="finish-modal" class="d-none">
+            <div class="modal-content">
+              <h3>참여정보 등록</h3>
+              <form action="/" method="post" id="final-form">
+                <div class="">
+                  <label for="user_name" class="">참여자 이름</label>
+                    <input type="text" class="form-control" id="user_name" required>
+                </div>
+                <div class="">
+                  <label for="user_phone" class="">전화번호</label>
+                    <input type="tel" class="form-control" id="user_phone" required>
+                </div>
+                  <button type="submit" class="">등록하기</button>
+              </form>
+        
+            </div>
+          </div>
         <div class="banner">
             <div class="title-bg">
                 <h1>경상남도 특산품을 기억하라!</h1>
@@ -83,9 +109,9 @@
                     <div class="check-card">
                         <h2>1일차</h2>
                         <div class="checked-mark">
-                            <div class="stamp-star">★</div>
+                            <div class="stamp-star d-none">★</div>
                         </div>
-                        <p class="check-date">2022.04.01</p>
+                        <p class="check-date"></p>
                     </div>
                     <div class="check-card">
                         <h2>2일차</h2>
@@ -117,265 +143,7 @@
 
         <div class="container">
             <div class="card-wrapper">
-                <div class="spec-card spec-card-">
-                    <div class="card-image">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back card-hidden">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back card-hidden">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
-                <div class="spec-card spec-card-">
-                    <div class="card-image card-hidden">
-                        <img src="../특산품/거창군_사과.jpg" />
-                        <div class="card-body">
-                            <div class="text">
-                                <div class="text-center">거창군-사과</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <svg width="100%" height="220" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="100%" height="100%" fill="#55595c" style="fill-opacity: .5;" /><text x="30%"
-                                y="50%" fill="#eceeef" dy=".3em">눌러주세요</text>
-                        </svg>
-                    </div>
-                </div>
+                
             </div>
         </div>
 </div>
@@ -384,11 +152,10 @@
     <p>Copyright (C) Gyeongsangbuk-do. All Rights Reserved.</p>
 </footer>
 
-
-
-<script src="/js/script.js">
+<script src="../js/script.js">
 
 </script>
+
 </body>
 
 </html>
