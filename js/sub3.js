@@ -1,6 +1,5 @@
 const writeBtn = document.getElementById("WriteBtn")
-const modal = document.getElementById("modal")
-const modalBackGround = document.getElementById("modalBackground")
+const reviewModal = document.getElementById("review-modall")
 
 // modal on off
 writeBtn.addEventListener("click", () => modal.style.display = "block" )       // modal on
@@ -8,9 +7,7 @@ modalBackGround.addEventListener("click", () => modal.style.display = "none" ) /
 // modal on off
 
 // star
-const drawStar = (target) => {
-    document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
-  }
+
 // function addReview() {
 //     const link = ""
 //     const data = {

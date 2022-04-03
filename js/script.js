@@ -1,4 +1,6 @@
-    // 특산품 리스트
+
+// star
+   // 특산품 리스트
     const SPECIALTIES = [
         {
             id: 'L001',
@@ -591,7 +593,7 @@
             }, 5000);
         })
     
-        const modalBtn = $("#floatingButton");
+        const modalBtn = $("#WriteBtn");
     
         const reviewModal = $('.review-modal');
     
@@ -625,7 +627,7 @@
         modalBtn.click(function (e) {
             reviewModal.removeClass('d-none');
         })
-    
+        
         reviewForm.submit(function (e) {
             e.preventDefault();
             const userNm = $(this).find('#user_nm');

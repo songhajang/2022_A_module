@@ -1,56 +1,105 @@
 <div class="sub3">
     <!DOCTYPE html>
-<html lang="ko">
+    <html lang="ko">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>구매후기</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>구매후기</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/script.js">
 
-<body>
-    <div id="modal">
-        <div id="modalBackground"></div>
-        <div id="modalItem">
-            <span>이름 <input type="text" name="name" id="name" placeholder="이름을 입력해주세요"></span>
-            <span>구매품 <input type="text" name="stock" id="stock" placeholder="구매품을 입력해주세요"></span>
-            <span>구매처<input type="text" name="buyArea" id="buyArea" placeholder="구매처를 입력해주세요"></span>
-            <span>구매일<input type="text" name="buyDate" id="buyDate" placeholder="구매일을 입력해주세요"></span>
-            <span>내용<input type="text" name="contents" id="contents" placeholder="내용을 입력해주세요"></span>
-            <span>별점 
-                <span class="star">★★★★★
-                    <span>★★★★★</span>
-                    <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
-                </span>
-            </span>
-            <span>사진 등록<input type="file" name="img" accept="image/jpg"></span>
+        </script>
+        <script>
+            const drawStar = (target) => {
+            document.querySelector(`.star span`).style.width = `${target.value * 10}%`;
+        }
+   
+        </script>
+    </head>
 
-            <input type="submit" value="후기등록">
+    <body>
+
+        <div class="alert d-none review-success">
+            구매 후기가 등록되었습니다.
         </div>
-    </div>
-    <header>
-        <a href="./index.html" class="logo"><img src="../img/logo.png" alt=""></a>
-        <ul class="nav">
-            <li id="share">
-                <img src="../img/share.png" alt="">
-                <div class="sub-nav">
-                    <ul>
-                        <li><a href="#"><img src="../img/instagram.png" alt=""></a></li>
-                        <li><a href="#"><img src="../img/facebook.png" alt=""></a></li>
-                        <li><a href="#"><img src="../img/t.png" alt=""></a></li>
-                        <li><a href="#"><img src="../img/youtube.png" alt=""></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li>
-                <input type="checkbox" id="menu-icon">
-                <label for="menu-icon">
+
+        <div class="alert d-none review-failure">
+            구매 후기가 등록에 실패했습니다.
+        </div>
+        <div class="review-modal d-none">
+            <div class="review-content">
+                <h2>구매후기 등록</h2>
+                <form class="w-75" id="review-form">
+                    <span>이름 <input type="text" name="name" id="user_nm" placeholder="이름을 입력해주세요"></span>
+
+
+                    <span>구매품 <input type="text" name="stock" id="review_goods" placeholder="구매품을 입력해주세요"></span>
+
+                    <span>구매처<input type="text" name="shop_nm" id="shop_nm" placeholder="구매처를 입력해주세요"></span>
+
+
+                    <span>구매일<input type="text" name="buy_date" id="buy_date" placeholder="구매일을 입력해주세요"></span>
+
+
+                    <span>별점
+                        <span class="star">★★★★★
+                            <span>★★★★★</span>
+                            <input type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                        </span>
+                    </span>
+
+
+                        <label for="colFormLabel">내용</label>
+                        <div>
+                            <textarea style="width: 800px;" name="content" class="form-control" cols="30" rows="10" id="review_content"
+                                placeholder="구매 후기를 작성해주세요."></textarea>
+                        </div>
+
+                    <div class="form-group row" style="height: 110px;">
+                        <div class="custom-file">
+                            <input type="file" id="review_files" class="d-none">
+                            <div class="review-img-container">
+                                <label for="review_files" class="files-label">
+                                    사진 추가
+                                </label>
+                                <img src="" alt="img" class="upload-img d-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit">후기 등록</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+        <header>
+            <a href="./index.html" class="logo"><img src="../img/logo.png" alt=""></a>
+            <ul class="nav">
+                <li id="share">
+                    <img src="../img/share.png" alt="">
+                    <div class="sub-nav">
+                        <ul>
+                            <li><a href="#"><img src="../img/instagram.png" alt=""></a></li>
+                            <li><a href="#"><img src="../img/facebook.png" alt=""></a></li>
+                            <li><a href="#"><img src="../img/t.png" alt=""></a></li>
+                            <li><a href="#"><img src="../img/youtube.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <input type="checkbox" id="menu-icon">
+                    <label for="menu-icon">
                         <span id="open"><img src="../img/menu.png" alt=""></span>
-                    
-                    <span id="colse">X</span>
+
+                        <span id="colse">X</span>
                         <div class="sub-nav">
                             <ul id="menu">
                                 <li><a href="./sub1.html">특산물 안내</a></li>
@@ -59,191 +108,192 @@
                             </ul>
                         </div>
 
-                </label>
-            </li>
-        </ul>
-    </header>
-    <div class="banner">
-        <div class="title-bg">
-            <h1>경상남도 특산품의 소중한 구매 후기를 찾습니다!</h1>
-            <br>
-            <h4>
-                경상남도 특산물을 사랑하는 고객님의 소중한 경험을 공유함으로써, 지역 특산품을 홍보하고 판매를 증진시켜, 경상남도 <br>
-                농가의 소득 증대는 물론, 품질이 좋은 특산품을 보다 많은 고객분들과 공유하기 위해 구매 후기를 모집 합니다.
-            </h4>
+                    </label>
+                </li>
+            </ul>
+        </header>
+
+        <div class="banner">
+            <div class="title-bg">
+                <h1>경상남도 특산품의 소중한 구매 후기를 찾습니다!</h1>
+                <br>
+                <h4>
+                    경상남도 특산물을 사랑하는 고객님의 소중한 경험을 공유함으로써, 지역 특산품을 홍보하고 판매를 증진시켜, 경상남도 <br>
+                    농가의 소득 증대는 물론, 품질이 좋은 특산품을 보다 많은 고객분들과 공유하기 위해 구매 후기를 모집 합니다.
+                </h4>
+            </div>
         </div>
-    </div>
-    <div class="review-content">
-        <a href="#" id="WriteBtn">후기작성</a>
-        <ul>
-            <li class="box">
-                <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
-                <div class="text">
-                    <p>
-                        별점 : <span class="stars">★★★★★</span> /
-                        작성자 : <span class="id">user1</span>
-                    </p>
-                    <p>
-                        구매 물품 :
-                        <span class="place">거제시</span> /
-                        <span class="buy">유자</span>
-                        (<span class="date">2022.03.24</span>)
+        <div class="review-contents">
+            <a href="#" id="WriteBtn">후기작성</a>
+            <ul>
+                <li class="box">
+                    <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
+                    <div class="text">
+                        <p>
+                            별점 : <span class="stars">★★★★★</span> /
+                            작성자 : <span class="id">user1</span>
+                        </p>
+                        <p>
+                            구매 물품 :
+                            <span class="place">거제시</span> /
+                            <span class="buy">유자</span>
+                            (<span class="date">2022.03.24</span>)
 
-                    </p>
-                    <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                </div>
-            </li>
-            <li class="box">
-                <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
-                <div class="text">
-                    <p>
-                        별점 : <span class="stars">★★★★★</span> /
-                        작성자 : <span class="id">user1</span>
-                    </p>
-                    <p>
-                        구매 물품 :
-                        <span class="place">거제시</span> /
-                        <span class="buy">유자</span>
-                        (<span class="date">2022.03.23</span>)
+                        </p>
+                        <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                    </div>
+                </li>
+                <li class="box">
+                    <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
+                    <div class="text">
+                        <p>
+                            별점 : <span class="stars">★★★★★</span> /
+                            작성자 : <span class="id">user1</span>
+                        </p>
+                        <p>
+                            구매 물품 :
+                            <span class="place">거제시</span> /
+                            <span class="buy">유자</span>
+                            (<span class="date">2022.03.23</span>)
 
-                    </p>
-                    <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                </div>
-            </li>
-            <li class="box">
-                <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
-                <div class="text">
-                    <p>
-                        별점 : <span class="stars">★★★★★</span> /
-                        작성자 : <span class="id">user1</span>
-                    </p>
-                    <p>
-                        구매 물품 :
-                        <span class="place">거제시</span> /
-                        <span class="buy">유자</span>
-                        (<span class="date">2022.03.23</span>)
+                        </p>
+                        <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                    </div>
+                </li>
+                <li class="box">
+                    <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
+                    <div class="text">
+                        <p>
+                            별점 : <span class="stars">★★★★★</span> /
+                            작성자 : <span class="id">user1</span>
+                        </p>
+                        <p>
+                            구매 물품 :
+                            <span class="place">거제시</span> /
+                            <span class="buy">유자</span>
+                            (<span class="date">2022.03.23</span>)
 
-                    </p>
-                    <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                </div>
-            </li>
-        </ul>
-        <ul>
-            <li class="box">
-                <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
-                <div class="text">
-                    <p>
-                        별점 : <span class="stars">★★★★★</span> /
-                        작성자 : <span class="id">user1</span>
-                    </p>
-                    <p>
-                        구매 물품 :
-                        <span class="place">거제시</span> /
-                        <span class="buy">유자</span>
-                        (<span class="date">2022.03.23</span>)
+                        </p>
+                        <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li class="box">
+                    <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
+                    <div class="text">
+                        <p>
+                            별점 : <span class="stars">★★★★★</span> /
+                            작성자 : <span class="id">user1</span>
+                        </p>
+                        <p>
+                            구매 물품 :
+                            <span class="place">거제시</span> /
+                            <span class="buy">유자</span>
+                            (<span class="date">2022.03.23</span>)
 
-                    </p>
-                    <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                </div>
-            </li>
-            <li class="box">
-                <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
-                <div class="text">
-                    <p>
-                        별점 : <span class="stars">★★★★★</span> /
-                        작성자 : <span class="id">user1</span>
-                    </p>
-                    <p>
-                        구매 물품 :
-                        <span class="place">거제시</span> /
-                        <span class="buy">유자</span>
-                        (<span class="date">2022.03.23</span>)
+                        </p>
+                        <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                    </div>
+                </li>
+                <li class="box">
+                    <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
+                    <div class="text">
+                        <p>
+                            별점 : <span class="stars">★★★★★</span> /
+                            작성자 : <span class="id">user1</span>
+                        </p>
+                        <p>
+                            구매 물품 :
+                            <span class="place">거제시</span> /
+                            <span class="buy">유자</span>
+                            (<span class="date">2022.03.23</span>)
 
-                    </p>
-                    <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                </div>
-            </li>
-            <li class="box">
-                <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
-                <div class="text">
-                    <p>
-                        별점 : <span class="stars">★★★★★</span> /
-                        작성자 : <span class="id">user1</span>
-                    </p>
-                    <p>
-                        구매 물품 :
-                        <span class="place">거제시</span> /
-                        <span class="buy">유자</span>
-                        (<span class="date">2022.03.23</span>)
+                        </p>
+                        <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                    </div>
+                </li>
+                <li class="box">
+                    <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
+                    <div class="text">
+                        <p>
+                            별점 : <span class="stars">★★★★★</span> /
+                            작성자 : <span class="id">user1</span>
+                        </p>
+                        <p>
+                            구매 물품 :
+                            <span class="place">거제시</span> /
+                            <span class="buy">유자</span>
+                            (<span class="date">2022.03.23</span>)
 
-                    </p>
-                    <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                </div>
-            </li>
-        </ul>
-        <ul>
-            <li class="box">
-                <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
-                <div class="text">
-                    <p>
-                        별점 : <span class="stars">★★★★★</span> /
-                        작성자 : <span class="id">user1</span>
-                    </p>
-                    <p>
-                        구매 물품 :
-                        <span class="place">거제시</span> /
-                        <span class="buy">유자</span>
-                        (<span class="date">2022.03.23</span>)
+                        </p>
+                        <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li class="box">
+                    <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
+                    <div class="text">
+                        <p>
+                            별점 : <span class="stars">★★★★★</span> /
+                            작성자 : <span class="id">user1</span>
+                        </p>
+                        <p>
+                            구매 물품 :
+                            <span class="place">거제시</span> /
+                            <span class="buy">유자</span>
+                            (<span class="date">2022.03.23</span>)
 
-                    </p>
-                    <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                </div>
-            </li>
-            <li class="box">
-                <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
-                <div class="text">
-                    <p>
-                        별점 : <span class="stars">★★★★★</span> /
-                        작성자 : <span class="id">user1</span>
-                    </p>
-                    <p>
-                        구매 물품 :
-                        <span class="place">거제시</span> /
-                        <span class="buy">유자</span>
-                        (<span class="date">2022.03.23</span>)
+                        </p>
+                        <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                    </div>
+                </li>
+                <li class="box">
+                    <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
+                    <div class="text">
+                        <p>
+                            별점 : <span class="stars">★★★★★</span> /
+                            작성자 : <span class="id">user1</span>
+                        </p>
+                        <p>
+                            구매 물품 :
+                            <span class="place">거제시</span> /
+                            <span class="buy">유자</span>
+                            (<span class="date">2022.03.23</span>)
 
-                    </p>
-                    <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                </div>
-            </li>
-            <li class="box">
-                <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
-                <div class="text">
-                    <p>
-                        별점 : <span class="stars">★★★★★</span> /
-                        작성자 : <span class="id">user1</span>
-                    </p>
-                    <p>
-                        구매 물품 :
-                        <span class="place">거제시</span> /
-                        <span class="buy">유자</span>
-                        (<span class="date">2022.03.23</span>)
+                        </p>
+                        <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                    </div>
+                </li>
+                <li class="box">
+                    <div class="img-box"><img src="../특산품/거제시_유자.jpg" alt=""></div>
+                    <div class="text">
+                        <p>
+                            별점 : <span class="stars">★★★★★</span> /
+                            작성자 : <span class="id">user1</span>
+                        </p>
+                        <p>
+                            구매 물품 :
+                            <span class="place">거제시</span> /
+                            <span class="buy">유자</span>
+                            (<span class="date">2022.03.23</span>)
 
-                    </p>
-                    <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                </div>
-            </li>
-        </ul>
-       
+                        </p>
+                        <h5 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                    </div>
+                </li>
+            </ul>
 
-    </div>
 
-    <footer>
-        <p>Copyright (C) Gyeongsangbuk-do. All Rights Reserved.</p>
-    </footer>
-    
-    <script src="../js/sub3.js"></script>
-</body>
+        </div>
 
-</html>
+        <footer>
+            <p>Copyright (C) Gyeongsangbuk-do. All Rights Reserved.</p>
+        </footer>
+
+        <script src="../js/sub3.js"></script>
+    </body>
+
+    </html>
 </div>
